@@ -1,1 +1,26 @@
 /* put custom app-wide css rules here-- comment each block of css code with what it does */
+
+.logo {
+	color: #3399FF;
+	margin-left: 47%;
+	margin-right: 47%;
+	margin-top: 4%;
+}
+
+/* for the sign up and login forms */
+
+.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.input-group { margin-bottom:10px; }
+.separator { border-right: 1px solid #dfdfe0; }
+
+.center-panel {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.center-panel2 {
+
+	margin-top: 10%;
+
+}

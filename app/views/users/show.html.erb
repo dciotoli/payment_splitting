@@ -1,4 +1,7 @@
-<!-- code for navbar -->
+<body class="profile-page">
+<% provide(:title, 'Profile') %>
+
+<!-- navbar code -->
 
 <div class = "navbar navbar-inverse navbar-static-top navigation">
 	<div class = "container">
@@ -17,34 +20,25 @@
 				<li><a href = "#">Products</a></li>
 				<li class=""><a href="#">About</a></li>
 
-				<% if signed_in? %>
+			
 					<li><a href="/profile">Account</a></li>
 					
 					<li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
-				<% else %>
-					<li><%= link_to('Sign in', new_user_session_path) %></li>
-				<% end %>
+				
 			</ul>
 		</div>
 	</div>
 </div>
 
-<!--- end of navbar code -->
-
+<!-- navbar code ends -->
 <div class="container">
-	<div class="jumbotron">
-		<h1 class="text-center">V-Pay</h1>
-		<h3 class="text-center" style="margin-top:2%;">Payment Splitting Made Easy</h3>
-
-		<i class="fa fa-users fa-5x logo"></i>
-
-		<div class="row" style="margin-top: 3%;">
-			<div class="col-md-5"></div>
-			<div class="col-md-2">
-				<div class="btn btn-lg btn-primary center-block">View the demo</div>
-			</div>
-			<div class="col-md-5"></div>
-	    </div>
-
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="profile-text">Welcome, <%= @user.email %></h1>
+		</div>
 	</div>
+
 </div>
+
+
+
