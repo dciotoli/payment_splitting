@@ -1,0 +1,10 @@
+<%= form_tag("/submit", method: "get") do %>
+  <%= label_tag(:q, "Name:") %>
+  <%= text_field_tag(:q) %>
+   <%= label_tag(:w, "Number:") %>
+  <%= text_field_tag(:w) %>
+   <%= label_tag(:e, "Product:") %>
+  <%= text_field_tag(:e) %>
+  <%= submit_tag("submit") %>
+<% end %>
+
