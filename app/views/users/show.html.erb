@@ -1,0 +1,44 @@
+<body class="profile-page">
+<% provide(:title, 'Profile') %>
+
+<!-- navbar code -->
+
+<div class = "navbar navbar-inverse navbar-static-top navigation">
+	<div class = "container">
+		<div class = "navbar-header">
+			<a href= "<%= root_path %>" class = "navbar-brand home-link">V-Pay</a>
+
+			<button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+				<span class = "icon-bar"></span>
+			</button>
+		</div>
+		<div class = "collapse navbar-collapse navHeaderCollapse">
+			<ul class = "nav navbar-nav navbar-right">
+				<li class = "active"><a href = "<%= root_path %>">Home</a></li>
+				<li><a href = "#">Products</a></li>
+				<li class=""><a href="#">About</a></li>
+
+			
+					<li><a href="/profile">Account</a></li>
+					
+					<li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- navbar code ends -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="profile-text">Welcome, <%= @user.email %></h1>
+		</div>
+	</div>
+
+</div>
+
+
+

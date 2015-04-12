@@ -1,6 +1,10 @@
 SplitPayments::Application.routes.draw do
+<<<<<<< HEAD
   get "twilio/submit"
   get "/submit" => 'twilio#submit'
+=======
+  devise_for :users
+>>>>>>> upstream/master
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,6 +12,15 @@ SplitPayments::Application.routes.draw do
   # root 'welcome#index'
 
   root 'static_pages#index'
+  get 'order/new'
+  get "order/athlete" 
+  get "order/healthyliving" 
+  get "order/homestyle" 
+  get "order/budget" 
+  get "order/vegetarian"
+  resources :order
+  match '/profile', to: 'users#show', via: 'get'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
