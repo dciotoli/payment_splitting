@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150411055501) do
-=======
 ActiveRecord::Schema.define(version: 20150411075919) do
->>>>>>> 49b15296a69864ff4fe20f8ce2d0f89adb938a22
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +21,9 @@ ActiveRecord::Schema.define(version: 20150411075919) do
     t.integer  "group_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order_id"
     t.integer  "product_id"
   end
 
-  add_index "orders", ["order_id"], name: "index_orders_on_order_id", using: :btree
   add_index "orders", ["product_id"], name: "index_orders_on_product_id", using: :btree
 
   create_table "products", force: true do |t|

@@ -1,1 +1,53 @@
-<p>Test</p>
+<div class="container">
+	<div class="row" style="margin-top: 3%;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div class="input_fields_wrap">
+					<div class="input-group">
+  					<span class="input-group-addon" id="basic-addon1">Email</span>
+ 					 <input type="text" class="form-control" id = "Email1" placeholder="email@example.com" aria-describedby="basic-addon1">
+					</div>
+				 </div>
+				<div class="btn btn-lg btn-primary center-block add_field_button" id = "Add">+</div>
+				<div class="btn btn-lg btn-primary center-block" id = "submit">Submit</div>	
+			</div>
+			<div class="col-md-4"></div>
+	    </div>
+</div>
+
+<script>
+$(function(){
+
+$('#submit').on('click', function (e) {
+	var x = 1;
+	var Email = '';
+	while ($('#Email'+x).length) {
+		Email = Email+document.getElementById('Email'+x).value +'\n';
+		x++;
+	}
+	
+    alert('Hello!\n'+ Email);
+
+});
+}); </script>
+
+<script>
+$(document).ready(function() {
+    var max_fields      = 10; //maximum input boxes allowed
+    var wrapper         = $(".input_fields_wrap"); //Fields wrapper
+    var add_button      = $(".add_field_button"); //Add button ID
+    
+    var x = 1; //initlal text box count
+    $(add_button).click(function(e){ //on add input button click
+        e.preventDefault();
+        if(x < max_fields){ //max input box allowed
+            x++; //text box increment
+            $(wrapper).append('<div class = input-group><span class="input-group-addon" id="basic-addon1">Email</span><input type="text" class="form-control" id = "Email'+x+'" placeholder="email@example.com" aria-describedby="basic-addon1"></div>'); //add input box
+        }
+    });
+    
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
